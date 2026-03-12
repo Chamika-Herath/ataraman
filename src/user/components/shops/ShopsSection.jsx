@@ -3,8 +3,8 @@ import styles from '../../styles/InitialPages.module.css';
 import SearchAndFilter from '../SearchAndFilter';
 import ShopCard from './ShopCard';
 import Navbar from '../Navbar';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { getLocations, getShops } from '../../services/api';
 
 export const ShopsSection = () => {
   const [shops, setShops] = useState([]);
@@ -17,15 +17,14 @@ export const ShopsSection = () => {
   const shopsPerPage = 9;
   const navigate = useNavigate();
 
-  // Base URL
-  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+  // no need for manual URL; helpers handle base path
 
   // Fetch all locations from API
   useEffect(() => {
     const fetchLocations = async () => {
       try {
         setIsLoadingLocations(true);
-        const response = await axios.get(`${API_URL}/api/locations`);
+        const response = await getLocations();
         const locationNames = response.data.map(location => location.locationName);
         setAllLocations(['All Locations', ...locationNames.sort()]);
       } catch (error) {
@@ -43,7 +42,7 @@ export const ShopsSection = () => {
     const fetchShops = async () => {
       try {
         setIsLoading(true);
-        const response = await axios.get(`${API_URL}/api/shops`);
+        const response = await getShops();
 
         const shopsWithReviews = response.data.map(shop => ({
           ...shop,
