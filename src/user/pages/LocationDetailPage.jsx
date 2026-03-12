@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import LocationDetail from '../components/locations/LocationDetail';
+import { getLocationById } from '../services/api';
 
 const LocationDetailPage = () => {
   const { id } = useParams();
@@ -13,7 +13,7 @@ const LocationDetailPage = () => {
     const fetchLocation = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`http://localhost:8000/api/locations/${id}`);
+        const response = await getLocationById(id);
         // Normalize the image structure for the component
         const locationData = response.data;
         if (locationData.images && locationData.images.length > 0) {

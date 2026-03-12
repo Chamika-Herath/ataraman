@@ -3,8 +3,8 @@ import styles from '../../styles/InitialPages.module.css';
 import SearchAndFilter from '../SearchAndFilter';
 import LocationCard from './LocationCard';
 import Navbar from '../Navbar';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { getLocations } from '../../services/api';
 
 export const LocationsPage = () => {
   const [locations, setLocations] = useState([]);
@@ -60,7 +60,7 @@ export const LocationsPage = () => {
     const fetchLocations = async () => {
       try {
         setIsLoading(true);
-        const response = await axios.get('http://localhost:8000/api/locations');
+        const response = await getLocations();
         // Add category to each location using our unified system
         const locationsWithCategory = response.data.map(location => ({
           ...location,

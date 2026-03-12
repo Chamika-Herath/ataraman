@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import GuideDetail from '../components/guides/GuideDetail';
+import { getGuideById } from '../services/api';
 
 const GuideDetailPage = () => {
   const { id } = useParams();
@@ -13,8 +13,7 @@ const GuideDetailPage = () => {
     const fetchGuide = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`http://localhost:8000/api/guides/${id}`);
-        
+        const response = await getGuideById(id);
         // Use the data directly from backend - no need to normalize
         const guideData = response.data;
         setGuide(guideData);

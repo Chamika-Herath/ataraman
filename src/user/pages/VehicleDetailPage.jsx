@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import VehicleDetail from '../components/vehicles/VehicleDetail';
+import { getVehicleById } from '../services/api';
 
 const VehicleDetailPage = () => {
   const { id } = useParams();
@@ -13,7 +13,7 @@ const VehicleDetailPage = () => {
     const fetchVehicle = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`http://localhost:8000/api/vehicles/${id}`);
+        const response = await getVehicleById(id);
         setVehicle(response.data);
       } catch (error) {
         console.error('Error fetching vehicle:', error);

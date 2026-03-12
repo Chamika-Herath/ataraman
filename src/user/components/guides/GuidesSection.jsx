@@ -3,8 +3,10 @@ import styles from '../../styles/InitialPages.module.css';
 import SearchAndFilter from '../SearchAndFilter';
 import GuideCard from './GuideCard';
 import Navbar from '../Navbar';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+
+// use centralized API helpers instead of hardcoding URLs
+import { getLocations, getGuides } from '../../services/api';
 
 export const GuidesSection = () => {
   const [guides, setGuides] = useState([]);
@@ -22,7 +24,7 @@ export const GuidesSection = () => {
     const fetchLocations = async () => {
       try {
         setIsLoadingLocations(true);
-        const response = await axios.get('http://localhost:8000/api/locations');
+        const response = await getLocations();
         const locationNames = response.data.map(location => location.locationName || location.name);
         setAllLocations(['All Locations', ...locationNames.sort()]);
       } catch (error) {
@@ -40,7 +42,7 @@ export const GuidesSection = () => {
     const fetchGuides = async () => {
       try {
         setIsLoading(true);
-        const response = await axios.get('http://localhost:8000/api/guides');
+        const response = await getGuides();
 
         const guidesWithReviews = response.data.map(guide => ({
           ...guide,

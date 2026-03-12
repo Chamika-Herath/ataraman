@@ -3,8 +3,8 @@ import styles from '../../styles/InitialPages.module.css';
 import SearchAndFilter from '../SearchAndFilter';
 import VehicleCard from './VehicleCard';
 import Navbar from '../Navbar';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { getLocations, getVehicles } from '../../services/api';
 
 export const VehiclesSection = () => {
   const [vehicles, setVehicles] = useState([]);
@@ -22,7 +22,7 @@ export const VehiclesSection = () => {
     const fetchLocations = async () => {
       try {
         setIsLoadingLocations(true);
-        const response = await axios.get('http://localhost:8000/api/locations');
+        const response = await getLocations();
         const locationNames = response.data.map(location => location.locationName);
         setAllLocations(['All Locations', ...locationNames.sort()]);
       } catch (error) {
@@ -40,7 +40,7 @@ export const VehiclesSection = () => {
     const fetchVehicles = async () => {
       try {
         setIsLoading(true);
-        const response = await axios.get('http://localhost:8000/api/vehicles');
+        const response = await getVehicles();
 
         const vehiclesWithReviews = response.data.map(vehicle => ({
           ...vehicle,

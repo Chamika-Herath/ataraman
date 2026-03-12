@@ -3,8 +3,8 @@ import styles from '../../styles/InitialPages.module.css';
 import SearchAndFilter from '../SearchAndFilter';
 import HotelCard from './HotelCard';
 import Navbar from '../Navbar';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { getLocations, getHotels } from '../../services/api';
 
 export const HotelsSection = () => {
   const [hotels, setHotels] = useState([]);
@@ -22,7 +22,7 @@ export const HotelsSection = () => {
     const fetchLocations = async () => {
       try {
         setIsLoadingLocations(true);
-        const response = await axios.get('http://localhost:8000/api/locations');
+        const response = await getLocations();
         const locationNames = response.data.map(location => location.locationName);
         setAllLocations(['All Locations', ...locationNames.sort()]);
       } catch (error) {
@@ -40,7 +40,7 @@ export const HotelsSection = () => {
     const fetchHotels = async () => {
       try {
         setIsLoading(true);
-        const response = await axios.get('http://localhost:8000/api/hotels');
+        const response = await getHotels();
 
         const hotelsWithReviews = response.data.map(hotel => ({
           ...hotel,

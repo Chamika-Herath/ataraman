@@ -1,3 +1,6 @@
+// derive base URL from environment variable, falls back to localhost
+const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+
 export const getGuideImageUrls = (guide) => {
   if (!guide || !guide.guideImage) return [];
   
@@ -13,9 +16,9 @@ export const getGuideImageUrls = (guide) => {
   
   return images.map(image => {
     if (image && image.startsWith('guides/')) {
-      return `http://localhost:8000/storage/${image}`;
+      return `${BASE_URL}/storage/${image}`;
     } else if (image) {
-      return `http://localhost:8000/storage/guides/${image}`;
+      return `${BASE_URL}/storage/guides/${image}`;
     }
     return "/default-guide.jpg";
   });
@@ -41,9 +44,9 @@ export const getShopImageUrls = (shop) => {
   
   return images.map(image => {
     if (image && image.startsWith('shops/')) {
-      return `http://localhost:8000/storage/${image}`;
+      return `${BASE_URL}/storage/${image}`;
     } else if (image) {
-      return `http://localhost:8000/storage/shops/${image}`;
+      return `${BASE_URL}/storage/shops/${image}`;
     }
     return "/default-shop.jpg";
   });
@@ -62,9 +65,9 @@ export const getHotelImageUrls = (hotel) => {
     return hotel.images.map(img => {
       const path = img.image_path;
       if (path && path.startsWith('hotels/')) {
-        return `http://localhost:8000/storage/${path}`;
+        return `${BASE_URL}/storage/${path}`;
       } else if (path) {
-        return `http://localhost:8000/storage/hotels/${path}`;
+        return `${BASE_URL}/storage/hotels/${path}`;
       }
       return "/default-hotel.jpg";
     });
@@ -85,9 +88,9 @@ export const getHotelImageUrls = (hotel) => {
   
   return images.map(image => {
     if (image && image.startsWith('hotels/')) {
-      return `http://localhost:8000/storage/${image}`;
+      return `${BASE_URL}/storage/${image}`;
     } else if (image) {
-      return `http://localhost:8000/storage/hotels/${image}`;
+      return `${BASE_URL}/storage/hotels/${image}`;
     }
     return "/default-hotel.jpg";
   });
@@ -106,9 +109,9 @@ export const getVehicleImageUrls = (vehicle) => {
     return vehicle.images.map(img => {
       const path = img.image_path;
       if (path && path.startsWith('vehicles/')) {
-        return `http://localhost:8000/storage/${path}`;
+        return `${BASE_URL}/storage/${path}`;
       } else if (path) {
-        return `http://localhost:8000/storage/vehicles/${path}`;
+        return `${BASE_URL}/storage/vehicles/${path}`;
       }
       return "/default-vehicle.jpg";
     });
@@ -133,9 +136,9 @@ export const getVehicleImageUrls = (vehicle) => {
   
   return images.map(image => {
     if (image && typeof image === 'string' && image.startsWith('vehicles/')) {
-      return `http://localhost:8000/storage/${image}`;
+      return `${BASE_URL}/storage/${image}`;
     } else if (image && typeof image === 'string') {
-      return `http://localhost:8000/storage/vehicles/${image}`;
+      return `${BASE_URL}/storage/vehicles/${image}`;
     }
     return "/default-vehicle.jpg";
   });

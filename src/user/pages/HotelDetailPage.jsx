@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import HotelDetail from '../components/hotels/HotelDetail';
+import { getHotelById } from '../services/api';
 
 const HotelDetailPage = () => {
   const { id } = useParams();
@@ -13,7 +13,7 @@ const HotelDetailPage = () => {
     const fetchHotel = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`http://localhost:8000/api/hotels/${id}`);
+        const response = await getHotelById(id);
         setHotel(response.data);
       } catch (error) {
         console.error('Error fetching hotel:', error);

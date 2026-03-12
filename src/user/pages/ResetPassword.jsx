@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
-import axios from "axios";
+import { resetPassword } from "../services/api";
 
 const ResetPassword = () => {
   const [searchParams] = useSearchParams();
@@ -85,12 +85,7 @@ const ResetPassword = () => {
       };
 
       // change base URL if you use an env var
-      const res = await axios.post(
-        "http://127.0.0.1:8000/api/reset-password",
-        payload,
-        { headers: { Accept: "application/json" } }
-      );
-
+      const res = await resetPassword(payload);
       setMessage(res.data?.message || "Password reset successful.");
       setTimeout(() => navigate("/login"), 1800);
     } catch (err) {
