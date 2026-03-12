@@ -14,7 +14,7 @@ import {
   createMyItem,
   updateMyItem,
   deleteMyItem
-} from '../../../services/api';
+} from '@/services/api';
 import { FaWhatsapp } from 'react-icons/fa6';
 
 const ShopOwnerProfile = ({ isExpanded, onToggleExpand, userId }) => {

@@ -9,7 +9,7 @@ import {
   updateMyHotel,
   deleteMyHotel,
   getLocations,
-} from '../../../services/api';
+} from '@/services/api';
 
 const HotelOwnerProfile = ({ isExpanded, onToggleExpand, userId }) => {
   const [hotelOwner, setHotelOwner] = useState(null);

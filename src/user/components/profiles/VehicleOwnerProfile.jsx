@@ -9,7 +9,7 @@ import {
   updateMyVehicle,
   deleteMyVehicle,
   getLocations,
-} from '../../../services/api';
+} from '@/services/api';
 import { getMainVehicleImage, getVehicleImageUrls } from '../../../helpers/ImageHelpers';
 
 const VehicleOwnerProfile = ({ isExpanded, onToggleExpand, userId }) => {

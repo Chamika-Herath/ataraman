@@ -95,6 +95,7 @@ export const getShopOwnerById = (id) => api.get(`/shop-owners/${id}`);
 // Public shop APIs
 export const getShops = () => api.get('/shops');
 export const getShopById = (id) => api.get(`/shops/${id}`);
+export const getShopItems = (shopId) => api.get(`/shops/${shopId}/items`);
 export const getShopsByOwner = (ownerId) => api.get(`/shop-owners/${ownerId}/shops`);
 export const getShopsByLocation = (location) => api.get(`/shops/location/${location}`);
 // Public hotel owner APIs

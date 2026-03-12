@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import ShopDetail from '../components/shops/ShopDetail';
+import { getShopById } from '@/services/api';
 
 const ShopDetailPage = () => {
   const { id } = useParams();
@@ -9,13 +9,11 @@ const ShopDetailPage = () => {
   const [shop, setShop] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
-
   useEffect(() => {
     const fetchShop = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`${API_URL}/api/shops/${id}`);
+        const response = await getShopById(id);
         setShop(response.data);
       } catch (error) {
         console.error('Error fetching shop:', error);

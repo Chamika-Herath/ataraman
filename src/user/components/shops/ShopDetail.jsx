@@ -4,10 +4,7 @@ import { ArrowLeft, MapPin, Star, DollarSign, MapPinned, ChevronLeft, ChevronRig
 import styles from '../../styles/DetailPages.module.css';
 import Navbar from '../Navbar';
 import ReviewSection from '../ReviewSection';
-import { getShopById, getShopReviews } from '@/services/api';
-import { LocationCard } from '../locations/LocationCard';
-import LocationDetail from '../locations/LocationDetail';
-import axios from 'axios';
+import { getShopById, getShopReviews, getShopItems, getLocations } from '@/services/api';
 
 const ShopDetail = ({ shop, onBack }) => {
   const reviews = shop.reviews || shop.reviews?.data || [];
@@ -21,8 +18,6 @@ const ShopDetail = ({ shop, onBack }) => {
   const [selectedItem, setSelectedItem] = useState(null);
   const [selectedLocation, setSelectedLocation] = useState(null);
   const navigate = useNavigate();
-
-  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
   const getImageUrl = (imagePath) => {
     const baseUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000';
@@ -63,7 +58,7 @@ const ShopDetail = ({ shop, onBack }) => {
     const fetchShopItems = async () => {
       if (shop?.id) {
         try {
-          const response = await axios.get(`${API_URL}/api/shops/${shop.id}/items`);
+          const response = await getShopItems(shop.id);
           setItems(response.data);
         } catch (error) {
           console.error('Error fetching shop items:', error);

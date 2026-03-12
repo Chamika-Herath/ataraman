@@ -5,7 +5,7 @@ import {
   createReview, 
   updateReview, 
   deleteReview 
-} from '../../services/api';
+} from '@/services/api';
 
 const ReviewSection = ({ entityType, entityId }) => {
   const { user, isAuthenticated } = useAuth();
