@@ -5,7 +5,7 @@ import { FaWhatsapp } from 'react-icons/fa6';
 import styles from '../../styles/DetailPages.module.css';
 import Navbar from '../Navbar';
 import ReviewSection from '../ReviewSection';
-import { getLocations } from '../../../services/api';
+import { getGuideById, getGuideReviews } from '@/services/api';
 import { LocationCard } from '../locations/LocationCard';
 import LocationDetail from '../locations/LocationDetail';
 

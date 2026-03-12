@@ -6,7 +6,7 @@ import Navbar from '../Navbar';
 import { useNavigate } from 'react-router-dom';
 
 // use centralized API helpers instead of hardcoding URLs
-import { getLocations, getGuides } from '../../services/api';
+import { getLocations, getGuides } from '@/services/api';
 
 export const GuidesSection = () => {
   const [guides, setGuides] = useState([]);

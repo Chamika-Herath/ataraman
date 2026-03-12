@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import DataTable from '../components/common/DataTable';
 import Modal from '../components/common/Modal';
 import RequestView from '../components/views/RequestView';
-import { getAdminRoleRequests, getRoleRequestStatistics, approveRoleRequest, rejectRoleRequest } from '../../services/api';
+import { getAdminRoleRequests, approveRoleRequest, rejectRoleRequest } from '@/services/api';
 import { Eye, CheckCircle, XCircle, User } from 'lucide-react';
 import { useAuth } from '../../contexts/AuthContext';
 

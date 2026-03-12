@@ -4,7 +4,7 @@ import SearchAndFilter from '../SearchAndFilter';
 import VehicleCard from './VehicleCard';
 import Navbar from '../Navbar';
 import { useNavigate } from 'react-router-dom';
-import { getLocations, getVehicles } from '../../services/api';
+import { getLocations, getVehicles } from '@/services/api';
 
 export const VehiclesSection = () => {
   const [vehicles, setVehicles] = useState([]);

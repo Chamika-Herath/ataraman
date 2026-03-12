@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Loader, AlertCircle, CheckCircle } from 'lucide-react';
-import { getUsers, checkNicAvailability } from '../../../services/api';
+import { getUsers, checkNicAvailability, getLocations } from '@/services/api';
 
 const HotelOwnerForm = ({ owner, onSave, onCancel, isEditing = false, submitting = false }) => {
   const [formData, setFormData] = useState({

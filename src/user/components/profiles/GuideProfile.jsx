@@ -1,6 +1,20 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { Shield, ChevronDown, ChevronUp, IdCardIcon, MapPin, Languages, Edit3, Trash2, User, Mail, Phone, Calendar, X, Upload, Loader, AlertCircle, CheckCircle } from 'lucide-react';
-import { getMyGuide, updateMyGuide, deleteMyGuide, getLocations, checkNicAvailability } from '../../../services/api';
+import { 
+  getMyShopOwner, 
+  updateMyShopOwner, 
+  deleteMyShopOwner, 
+  checkNicAvailability,
+  getMyShops,
+  createMyShop,
+  updateMyShop,
+  deleteMyShop,
+  getLocations,
+  getItemsByAuthenticatedShop,
+  createMyItem,
+  updateMyItem,
+  deleteMyItem
+} from '@/services/api';
 import { FaWhatsapp } from 'react-icons/fa6';
 
 const GuideProfile = ({ isExpanded, onToggleExpand, userId }) => {

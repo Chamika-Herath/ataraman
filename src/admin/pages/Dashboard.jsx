@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { MapPin, Users, Store, Building2, Car, Hotel, UserCheck, AlertCircle } from 'lucide-react';
-import api from '../../services/api';
+import api from '@/services/api';
 
 const Dashboard = () => {
   const [statsData, setStatsData] = useState({

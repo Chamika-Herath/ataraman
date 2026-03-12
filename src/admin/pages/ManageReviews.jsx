@@ -1,13 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import DataTable from '../components/common/DataTable';
-import Modal from '../components/common/Modal';
-import ReviewView from '../components/views/ReviewView';
-import { 
-  getReviews, 
-  getWebsiteReviews, 
-  deleteReview, 
-  deleteWebsiteReview 
-} from '../../services/api';
+import { getReviews, getWebsiteReviews, deleteReview, deleteWebsiteReview } from '@/services/api';
 
 const reviewTypes = [
   { id: 'websitereview', label: 'Website', apiType: 'website' },

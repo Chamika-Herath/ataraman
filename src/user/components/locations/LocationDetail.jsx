@@ -6,7 +6,7 @@ import LocationMap from './LocationMap';
 import styles from '../../styles/DetailPages.module.css';
 import Navbar from '../Navbar';
 import ReviewSection from '../ReviewSection';
-import { getRelatedData } from '../../../services/api';
+import { getLocationById, getLocationReviews } from '@/services/api';
 import { GuideCard } from '../guides/GuideCard';
 import GuideDetail from '../guides/GuideDetail';
 import { ShopCard } from '../shops/ShopCard';

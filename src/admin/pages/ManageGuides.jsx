@@ -8,7 +8,7 @@ import {
   createGuide,
   updateGuide,
   deleteGuide
-} from '../../services/api';
+} from '@/services/api';
 
 const ManageGuides = () => {
   const [showModal, setShowModal] = useState(false);

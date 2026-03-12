@@ -4,12 +4,12 @@ import Hero from '../components/Hero';
 import ProductSection from '../components/ProductSection';
 import AboutUs from '../components/AboutUs';
 import Footer from '../components/Footer';
-import { getLocations, getGuides, getShops, getHotels, getVehicles } from "../../services/api";
+import { getLocations, getGuides, getShops, getHotels, getVehicles } from "@/services/api";
 import { useNavigate } from 'react-router-dom';
 import {
   getWebsiteReviews,
   createWebsiteReview,
-} from '../../services/api';
+} from '@/services/api';
 
 function Home() {
   const navigate = useNavigate();

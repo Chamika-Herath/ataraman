@@ -15,8 +15,11 @@ import {
   getVehicleById,
   createVehicle,
   updateVehicle,
-  deleteVehicle
-} from '../../services/api';
+  deleteVehicle,
+  getUsers,
+  getLocations,
+  checkNicAvailability
+} from '@/services/api';
 
 const ManageVehicleOwners = () => {
   const [currentView, setCurrentView] = useState('owners'); // 'owners' or 'shops'

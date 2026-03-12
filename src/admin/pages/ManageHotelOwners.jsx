@@ -16,7 +16,7 @@ import {
   createHotel,
   updateHotel,
   deleteHotel
-} from '../../services/api'
+} from '@/services/api'
 
 const ManageHotelOwners = () => {
   const [currentView, setCurrentView] = useState('owners'); // 'owners' or 'hotels'

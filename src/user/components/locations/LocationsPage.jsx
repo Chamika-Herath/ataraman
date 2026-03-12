@@ -4,7 +4,7 @@ import SearchAndFilter from '../SearchAndFilter';
 import LocationCard from './LocationCard';
 import Navbar from '../Navbar';
 import { useNavigate } from 'react-router-dom';
-import { getLocations } from '../../services/api';
+import { getLocations } from '@/services/api';
 
 export const LocationsPage = () => {
   const [locations, setLocations] = useState([]);

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowLeft, Mail, Send, Check, AlertCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { sendResetLink } from '../../services/api';
+import { getProfile, requestRole, getRoleRequests } from '@/services/api';
 
 const ForgotPassword = () => {
   const navigate = useNavigate();

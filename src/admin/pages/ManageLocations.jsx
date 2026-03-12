@@ -9,7 +9,7 @@ import {
   createLocation,
   updateLocation,
   deleteLocation
-} from '../../services/api';
+} from '@/services/api';
 
 const ManageLocations = () => {
   const [showModal, setShowModal] = useState(false);

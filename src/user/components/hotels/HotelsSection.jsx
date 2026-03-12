@@ -4,7 +4,7 @@ import SearchAndFilter from '../SearchAndFilter';
 import HotelCard from './HotelCard';
 import Navbar from '../Navbar';
 import { useNavigate } from 'react-router-dom';
-import { getLocations, getHotels } from '../../services/api';
+import { getLocations, getHotels } from '@/services/api';
 
 export const HotelsSection = () => {
   const [hotels, setHotels] = useState([]);

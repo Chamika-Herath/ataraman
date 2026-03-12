@@ -4,7 +4,7 @@ import { ArrowLeft, MapPin, Star, Fuel, Gauge, UserCheck, CarFront, CircleDollar
 import styles from '../../styles/DetailPages.module.css';
 import Navbar from "../Navbar";
 import ReviewSection from "../ReviewSection";
-import { getLocations } from '../../../services/api';
+import { getVehicleById, getVehicleReviews } from '@/services/api';
 import { LocationCard } from '../locations/LocationCard';
 import LocationDetail from '../locations/LocationDetail';
 

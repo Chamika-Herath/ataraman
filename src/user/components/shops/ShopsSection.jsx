@@ -4,7 +4,7 @@ import SearchAndFilter from '../SearchAndFilter';
 import ShopCard from './ShopCard';
 import Navbar from '../Navbar';
 import { useNavigate } from 'react-router-dom';
-import { getLocations, getShops } from '../../services/api';
+import { getLocations, getShops } from '@/services/api';
 
 export const ShopsSection = () => {
   const [shops, setShops] = useState([]);

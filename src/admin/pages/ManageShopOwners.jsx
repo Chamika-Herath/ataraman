@@ -16,7 +16,7 @@ import {
   createShop,
   updateShop,
   deleteShop
-} from '../../services/api';
+} from '@/services/api';
 
 const ManageShopOwners = () => {
   const [currentView, setCurrentView] = useState('owners'); // 'owners' or 'shops'

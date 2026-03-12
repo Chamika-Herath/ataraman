@@ -6,9 +6,8 @@ import UserView from '../components/views/UserView';
 import {
   getUsers,
   registerAdmin,
-  updateAdmin,
   deleteAdmin
-} from '../../services/api';
+} from '@/services/api';
 
 const ManageUsers = () => {
   const [showModal, setShowModal] = useState(false);
