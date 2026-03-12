@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { X, Eye, EyeOff, User, Mail, Lock } from 'lucide-react';
-import { registerUser } from '../../services/api';
+import { registerUser } from '@/services/api';
 import { useNavigate } from 'react-router-dom';
 
 const RegisterModal = ({ isOpen, onClose, onSwitchToLogin, onRegister }) => {

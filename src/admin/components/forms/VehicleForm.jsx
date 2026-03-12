@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Upload, X, Loader, AlertCircle, CheckCircle } from 'lucide-react';
-import { getLocations, checkRegistrationNumberAvailability } from '../../../services/api';
+import { getLocations, checkRegistrationNumberAvailability } from '@/services/api';
 
 const VehicleForm = ({ vehicle, onSave, onCancel, selectedOwner, submitting = false }) => {
   const [formData, setFormData] = useState({

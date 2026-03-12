@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { X, Eye, EyeOff } from 'lucide-react';
-import { loginUser } from '../../services/api';
+import { loginUser } from '@/services/api';
 import { useAuth } from '../../contexts/AuthContext';
 
 const LoginModal = ({ isOpen, onClose, onSwitchToRegister, onLogin }) => {

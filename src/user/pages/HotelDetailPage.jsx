@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import HotelDetail from '../components/hotels/HotelDetail';
-import { getHotelById } from '../services/api';
+import { getHotelById } from '@/services/api';
 
 const HotelDetailPage = () => {
   const { id } = useParams();

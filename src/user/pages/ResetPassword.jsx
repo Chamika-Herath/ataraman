@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
-import { resetPassword } from "../services/api";
+import { resetPassword } from '@/services/api';
 
 const ResetPassword = () => {
   const [searchParams] = useSearchParams();

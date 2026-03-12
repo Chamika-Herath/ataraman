@@ -3,7 +3,7 @@ import {
   X, User, Mail, Phone, FileText, MapPin, Languages, 
   Image, MessageCircle, Check, Calendar, Map, AlertCircle, CheckCircle
 } from 'lucide-react';
-import { getLocations, checkNicAvailability } from '../../services/api';
+import { getLocations, checkNicAvailability } from '@/services/api';
 
 const RoleRequestForm = ({ role, userData, onSubmit, onCancel, isSubmitting }) => {
   const [formData, setFormData] = useState({

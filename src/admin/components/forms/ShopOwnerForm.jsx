@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Loader, AlertCircle, CheckCircle } from 'lucide-react';
-import { getUsers, checkNicAvailability } from '../../../services/api';
+import { getUsers, checkNicAvailability } from '@/services/api';
 
 const ShopOwnerForm = ({ owner, onSave, onCancel, isEditing = false, submitting = false }) => {
   const [formData, setFormData] = useState({

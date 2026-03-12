@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Upload, X, Loader, AlertCircle, CheckCircle } from 'lucide-react';
-import { getUsers, getLocations, checkNicAvailability } from '../../../services/api';
+import { getUsers, getLocations, checkNicAvailability } from '@/services/api';
 
 const GuideForm = ({ guide, onSave, onCancel, isEditing }) => {
   const [formData, setFormData] = useState({

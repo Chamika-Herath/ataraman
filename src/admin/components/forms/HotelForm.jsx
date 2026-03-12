@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Upload, X, Loader } from 'lucide-react';
-import { getLocations } from '../../../services/api';
+import { getLocations } from '@/services/api';
 
 const HotelForm = ({ hotel, onSave, onCancel, selectedOwner, submitting = false }) => {
   const [formData, setFormData] = useState({

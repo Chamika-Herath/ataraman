@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import LocationDetail from '../components/locations/LocationDetail';
-import { getLocationById } from '../services/api';
+import { getLocationById } from '@/services/api';
 
 const LocationDetailPage = () => {
   const { id } = useParams();

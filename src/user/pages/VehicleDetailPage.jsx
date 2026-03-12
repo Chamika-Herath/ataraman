@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import VehicleDetail from '../components/vehicles/VehicleDetail';
-import { getVehicleById } from '../services/api';
+import { getVehicleById } from '@/services/api';
 
 const VehicleDetailPage = () => {
   const { id } = useParams();

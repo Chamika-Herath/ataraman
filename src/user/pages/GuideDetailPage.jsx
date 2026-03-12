@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import GuideDetail from '../components/guides/GuideDetail';
-import { getGuideById } from '../services/api';
+import { getGuideById } from '@/services/api';
 
 const GuideDetailPage = () => {
   const { id } = useParams();

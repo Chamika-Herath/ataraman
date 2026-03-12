@@ -6,7 +6,7 @@ import HotelOwnerProfile from './profiles/HotelOwnerProfile';
 import ShopOwnerProfile from './profiles/ShopOwnerProfile';
 import VehicleOwnerProfile from './profiles/VehicleOwnerProfile';
 import RoleRequestForm from './RoleRequestForm';
-import { getProfile, requestRole, getRoleRequests } from '../../services/api';
+import { getProfile, requestRole, getRoleRequests } from '@/services/api';
 import { useAuth } from '../../contexts/AuthContext';
 
 const UserProfile = () => {
